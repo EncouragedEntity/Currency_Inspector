@@ -1,6 +1,4 @@
 ﻿using Caliburn.Micro;
-using System;
-
 namespace CurrencyInspector.ViewModels
 {
     public class ShellViewModel : Conductor<object>

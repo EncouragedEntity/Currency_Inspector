@@ -30,7 +30,6 @@
         </DockPanel>
         <ContentControl x:Name="ActiveItem"  Grid.Row="1" Grid.Column="0" 
                         Grid.ColumnSpan="4" Grid.RowSpan="4">
-        
         </ContentControl>
     </Grid>
 </Window>
