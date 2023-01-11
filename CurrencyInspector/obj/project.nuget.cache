@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Wo2NROxW03n9it+i8ieC4vLvMN9SwLaVxFiXHoeHPEJ5PrzBPmRl3a3H2D0G4slfbocuECsjFQ8jnPaO+3Mbdg==",
+  "dgSpecHash": "68xSDsCdA/38Rtn+1AQeabnHKfDCeMDWc2+uDcFkapxm9F++0OMlxEDgGA9RE8GvCtDRx7Ib3tH7qbbIcEmnkg==",
   "success": true,
   "projectFilePath": "D:\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector\\CurrencyInspector.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\пк\\.nuget\\packages\\caliburn.micro\\4.0.212\\caliburn.micro.4.0.212.nupkg.sha512",
     "C:\\Users\\пк\\.nuget\\packages\\caliburn.micro.core\\4.0.212\\caliburn.micro.core.4.0.212.nupkg.sha512",
+    "C:\\Users\\пк\\.nuget\\packages\\mahapps.metro.iconpacks.material\\4.11.0\\mahapps.metro.iconpacks.material.4.11.0.nupkg.sha512",
     "C:\\Users\\пк\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\пк\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\пк\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.37\\microsoft.xaml.behaviors.wpf.1.1.37.nupkg.sha512",

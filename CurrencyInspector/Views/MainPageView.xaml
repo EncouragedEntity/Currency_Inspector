@@ -3,9 +3,82 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CurrencyInspector.Views"
-             mc:Ignorable="d" Background="White"
-             d:DesignHeight="450" d:DesignWidth="800">
+             xmlns:Icon ="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" Background="WhiteSmoke"
+             d:DesignHeight="450" d:DesignWidth="800"
+             Grid.Column="1" Margin="60, 20, 20, 20">
+        <!--Main Page-->
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <!--Search TextBox-->
+        <Grid Width="300" HorizontalAlignment="Left">
+            <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="Gray" 
+                       IsHitTestVisible="True" Panel.ZIndex="1" Text="Search..."
+                       Visibility="Visible"/>
+            <TextBox x:Name="textSearch" Style="{StaticResource textBoxSearch}"/>
+            <Icon:PackIconMaterial Kind="Magnify" Width="15" Height="15"
+                                   VerticalAlignment="Center" Margin="0,0,15,0"
+                                   Foreground="Gray" HorizontalAlignment="Right"/>
+        </Grid>
+        <!--Page Title-->
+        <TextBlock Text="Assets" Grid.Row="1" FontSize="32" FontWeight="SemiBold" 
+                   Margin="0, 20, 0, 0" HorizontalAlignment="Left" Foreground="#121518"/> 
+        <!--Assets datagrid-->
+        <DataGrid Style="{DynamicResource DataGridStyle1}" 
+                  CellStyle="{DynamicResource DataGridCellStyle1}" 
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
+                  RowStyle="{DynamicResource DataGridRowStyle1}" 
+                  Grid.Row="5" x:Name="assetsDataGrid" 
+                  ItemsSource="{Binding Path=Assets, Mode=OneWay}">
+            <DataGrid.Columns>
+                
+                <DataGridTextColumn CanUserResize="False" Width="auto">
+                    <DataGridTextColumn.Header>
+                        <TextBlock x:Name="textBlockId" Text="ID"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                
+                <DataGridTextColumn CanUserResize="False" Width="auto">
+                    <DataGridTextColumn.Header>
+                        <TextBlock x:Name="textBlockName" Text="Name"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn CanUserResize="False" Width="auto">
+                    <DataGridTextColumn.Header>
+                        <TextBlock x:Name="textBlockPrice" Text="Price"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="ShowDetails" Content="Details"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+            <!--Pagination section-->
+        <Border Grid.Row="6" HorizontalAlignment="Right" BorderBrush="#dee4ec" BorderThickness="1"
+                CornerRadius="5" Padding="5" Background="White" Margin="0, 10, 10, 10">
+            <StackPanel Orientation="Horizontal">
+                <Button Style="{StaticResource pagingButton}">
+                    <Icon:PackIconMaterial Kind="ChevronLeft" Style="{StaticResource pagingButtonIcon}"/>
+                </Button>
+                <Rectangle Width="1" Fill="#dee4ec" Margin="3, 7"/>
+                <Button Style="{StaticResource pagingButton}">
+                    <Icon:PackIconMaterial Kind="ChevronRight" Style="{StaticResource pagingButtonIcon}"/>
+                </Button>
+            </StackPanel>
+        </Border>
     </Grid>
-</UserControl>
+</UserControl>  

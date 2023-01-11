@@ -1,16 +1,21 @@
 ﻿using Caliburn.Micro;
+using System.ComponentModel;
+using System.Threading.Tasks;
+using System.Windows;
+
 namespace CurrencyInspector.ViewModels
 {
-    public class ShellViewModel : Conductor<object>
+    public class ShellViewModel : Conductor<Screen>
     {
-        public void LoadMainPage()
+        public ShellViewModel()
         {
-            ActivateItemAsync(new MainPageViewModel());
+            LoadMainPage();
         }
 
-        public void LoadCurrencyDetailsPage()
-        {
-            ActivateItemAsync(new CurrencyDetailsPageViewModel());
-        }
+        public void LoadMainPage() => Task.Run(() => ActivateItemAsync(new MainPageViewModel()));
+
+        public void LoadCurrencyDetailsPage() => Task.Run(() => ActivateItemAsync(new CurrencyDetailsPageViewModel()));
+
+        public void LogOut() => Application.Current.Shutdown();
     }
 }

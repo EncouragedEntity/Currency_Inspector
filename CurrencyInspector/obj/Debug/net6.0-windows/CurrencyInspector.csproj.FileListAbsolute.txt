@@ -31,3 +31,5 @@ D:\Currency_Inspector\CurrencyInspector\CurrencyInspector\obj\Debug\net6.0-windo
 D:\Currency_Inspector\CurrencyInspector\CurrencyInspector\obj\Debug\net6.0-windows\Views\MainPageView.baml
 D:\Currency_Inspector\CurrencyInspector\CurrencyInspector\obj\Debug\net6.0-windows\Views\CurrencyDetailsPageView.g.cs
 D:\Currency_Inspector\CurrencyInspector\CurrencyInspector\obj\Debug\net6.0-windows\Views\CurrencyDetailsPageView.baml
+D:\Currency_Inspector\CurrencyInspector\CurrencyInspector\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.Core.dll
+D:\Currency_Inspector\CurrencyInspector\CurrencyInspector\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.Material.dll
