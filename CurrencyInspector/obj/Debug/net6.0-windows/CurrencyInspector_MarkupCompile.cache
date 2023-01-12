@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Currency_Inspector\CurrencyInspector\CurrencyInspector\App.xaml
-3377924906
+3-1416613008
 
-161399863222
+15488485652
 201-839547166
-Views\CurrencyDetailsPageView.xaml;Views\MainPageView.xaml;Views\ShellView.xaml;
+Views\DetailsWindowView.xaml;Views\MainPageView.xaml;Views\ShellView.xaml;
 
 False
 

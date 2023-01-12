@@ -1,9 +1,11 @@
 ﻿using Caliburn.Micro;
 using CurrencyInspector.Models;
+using CurrencyInspector.Views;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CurrencyInspector.ViewModels
 {
@@ -78,6 +80,7 @@ namespace CurrencyInspector.ViewModels
             }
         }
 
+
         public MainPageViewModel()
         {
             Assets = new ObservableCollection<AssetModel>();
@@ -106,11 +109,6 @@ namespace CurrencyInspector.ViewModels
                     item.Name = "Empty";
                 }
             }
-        }
-
-        public void ShowDetails()
-        {
-            Task.Run(()=>ActivateItemAsync(new CurrencyDetailsPageViewModel(SelectedAsset, Assets)));
         }
     }
 }

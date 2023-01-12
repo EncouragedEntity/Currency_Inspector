@@ -7,8 +7,6 @@
         WindowStartupLocation="CenterScreen" AllowsTransparency="True" 
         WindowStyle="None" Background="Transparent">
 
-
-
         <Border Background="WhiteSmoke" 
             CornerRadius="30" 
             MouseDown="Border_MouseDown"

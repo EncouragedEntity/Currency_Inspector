@@ -3,13 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:Icon ="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:Icon ="http://metro.mahapps.com/winfx/xaml/iconpacks" 
+             xmlns:local ="clr-namespace:CurrencyInspector.ViewModels"
              mc:Ignorable="d" Background="WhiteSmoke"
              d:DesignHeight="450" d:DesignWidth="800"
              Grid.Column="1" Margin="60, 20, 20, 20">
         <!--Main Page-->
-    <Grid DataContext="MainPageViewModel">
+        <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -20,10 +23,12 @@
         </Grid.RowDefinitions>
         <!--Search TextBox-->
         <Grid Width="300" HorizontalAlignment="Left">
-            <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="Gray" 
-                       IsHitTestVisible="True" Panel.ZIndex="1" Text="Search..."
+
+            <TextBlock x:Name="textBlockSearch" Margin="20 0" VerticalAlignment="Center" Foreground="Gray" 
+                       IsHitTestVisible="True" Panel.ZIndex="1" Text="Search by name..."
                        Visibility="Visible"/>
-            <TextBox x:Name="textSearch" Style="{StaticResource textBoxSearch}"/>
+            <TextBox x:Name="textSearch" Style="{StaticResource textBoxSearch}" 
+                     TextChanged="textSearch_TextChanged" KeyDown="textSearch_KeyDown"/>
             <Icon:PackIconMaterial Kind="Magnify" Width="15" Height="15"
                                    VerticalAlignment="Center" Margin="0,0,15,0"
                                    Foreground="Gray" HorizontalAlignment="Right"/>
@@ -39,19 +44,16 @@
                   ItemsSource="{Binding AssetsSimple}"
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
-                  SelectedItem="{Binding Path=SelectedAsset, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedAsset, Mode=TwoWay}"
                   Grid.Row="5" x:Name="assetsDataGrid" CanUserReorderColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID" IsReadOnly="True" CanUserResize="False" Width="auto"/>
-
                     <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" IsReadOnly="True" CanUserResize="False" Width="*"/>
-
                     <DataGridTextColumn Binding="{Binding Path=Price}" Header="Price" IsReadOnly="True" CanUserResize="False" Width="auto"/>
-                    
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="ShowDetails" Style="{StaticResource pagingButton}">
+                                <Button x:Name="ShowDetails" Click="ShowDetails_Click" Style="{StaticResource pagingButton}">
                                     <Icon:PackIconMaterial Kind="DotsHorizontalCircle"/>
                                 </Button>
                             </DataTemplate>
@@ -59,8 +61,8 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-            <!--Pagination section-->
-        <Border Grid.Row="6" HorizontalAlignment="Right" BorderBrush="#dee4ec" BorderThickness="1"
+        <!--Pagination section-->
+        <Border Grid.Row="8" HorizontalAlignment="Right" BorderBrush="#dee4ec" BorderThickness="1"
                 CornerRadius="5" Padding="5" Background="White" Margin="0, 10, 10, 10">
             <StackPanel Orientation="Horizontal">
                 <Button Style="{StaticResource pagingButton}">

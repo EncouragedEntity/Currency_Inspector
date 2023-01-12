@@ -1,0 +1,112 @@
+﻿<Window x:Class="CurrencyInspector.Views.DetailsWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CurrencyInspector.Views"
+        xmlns:Icon ="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent" WindowStartupLocation="CenterOwner"
+        Height="auto" Width="auto" SizeToContent="WidthAndHeight"
+        Deactivated="Window_Deactivated">
+    <Border MouseDown="Border_MouseDown" CornerRadius="30"
+            Background="#8C489F">
+        <Grid x:Name="myGrid" Margin="0,0,103,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <!--Return button-->
+            <Button Grid.Column="0" Grid.Row="0" Click="GoBackClick"
+                Style="{StaticResource backButton}"
+                    Margin="10">
+                <Icon:PackIconMaterial Kind="ArrowLeft" Style="{StaticResource pagingButtonIcon}"/>
+            </Button>
+
+            <!--Detailed asset properties-->
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <!--#region Column 1 -->
+                <StackPanel Grid.Row="0" Grid.Column="0"
+                            Orientation="Horizontal" Margin="5">
+                    <TextBlock Foreground="#3B111A" FontSize="15" Text="Id:"/>
+                    <TextBox Text="{Binding AssetId}" Style="{StaticResource detailTextBox}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="0"
+                            Orientation="Horizontal" Margin="5">
+                    <TextBlock Foreground="#3B111A" FontSize="15" Text="Name:"/>
+                    <TextBox Text="{Binding Name}" Style="{StaticResource detailTextBox}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="0"
+                            Orientation="Horizontal" Margin="5">
+                    <TextBlock Foreground="#3B111A" FontSize="15" Text="Price:"/>
+                    <TextBox Text="{Binding Price}" Style="{StaticResource detailTextBox}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Grid.Column="0"
+                            Orientation="Horizontal" Margin="5">
+                    <TextBlock Foreground="#3B111A" FontSize="15" Text="Volume(24h):"/>
+                    <TextBox Text="{Binding Volume_24h}" Style="{StaticResource detailTextBox}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Grid.Column="0"
+                            Orientation="Horizontal" Margin="5">
+                    <TextBlock Foreground="#3B111A" FontSize="15" Text="Status:"/>
+                    <TextBox Text="{Binding Volume_24h}" Style="{StaticResource detailTextBox}"/>
+                </StackPanel>
+                <!--#endregion-->
+                <!--#region Column 2 -->
+                <StackPanel Grid.Row="0" Grid.Column="1"
+                            Orientation="Horizontal" Margin="5">
+                    <TextBlock Foreground="#3B111A" FontSize="15" Text="Change(1h):"/>
+                    <TextBox Text="{Binding Change_1h}" Style="{StaticResource detailTextBox}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1"
+                            Orientation="Horizontal" Margin="5">
+                    <TextBlock Foreground="#3B111A" FontSize="15" Text="Change(24h):"/>
+                    <TextBox Text="{Binding Change_24h}" Style="{StaticResource detailTextBox}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="1"
+                            Orientation="Horizontal" Margin="5">
+                    <TextBlock Foreground="#3B111A" FontSize="15" Text="Change(7d):"/>
+                    <TextBox Text="{Binding Change_7d}" Style="{StaticResource detailTextBox}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="1"
+                            Orientation="Horizontal" Margin="5">
+                    <TextBlock Foreground="#3B111A" FontSize="15" Text="Created at:"/>
+                    <TextBox Text="{Binding CreatedAt}" Style="{StaticResource detailTextBox}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="1"
+                            Orientation="Horizontal" Margin="5">
+                    <TextBlock Foreground="#3B111A" FontSize="15" Text="Updated at:"/>
+                    <TextBox Text="{Binding UpdatedAt}" Style="{StaticResource detailTextBox}"/>
+                </StackPanel>
+                <!--#endregion-->
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
