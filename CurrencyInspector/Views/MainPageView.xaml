@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Grid.Column="1" Margin="60, 20, 20, 20">
         <!--Main Page-->
-    <Grid>
+    <Grid DataContext="MainPageViewModel">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -30,43 +30,35 @@
         </Grid>
         <!--Page Title-->
         <TextBlock Text="Assets" Grid.Row="1" FontSize="32" FontWeight="SemiBold" 
-                   Margin="0, 20, 0, 0" HorizontalAlignment="Left" Foreground="#121518"/> 
-        <!--Assets datagrid-->
+                   Margin="15, 20, 0, 0" HorizontalAlignment="Left" Foreground="#121518"/> 
+        <!--Assets datarid-->
         <DataGrid Style="{DynamicResource DataGridStyle1}" 
-                  CellStyle="{DynamicResource DataGridCellStyle1}" 
-                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
-                  RowStyle="{DynamicResource DataGridRowStyle1}" 
-                  Grid.Row="5" x:Name="assetsDataGrid" 
-                  ItemsSource="{Binding Path=Assets, Mode=OneWay}">
-            <DataGrid.Columns>
-                
-                <DataGridTextColumn CanUserResize="False" Width="auto">
-                    <DataGridTextColumn.Header>
-                        <TextBlock x:Name="textBlockId" Text="ID"/>
-                    </DataGridTextColumn.Header>
-                </DataGridTextColumn>
-                
-                <DataGridTextColumn CanUserResize="False" Width="auto">
-                    <DataGridTextColumn.Header>
-                        <TextBlock x:Name="textBlockName" Text="Name"/>
-                    </DataGridTextColumn.Header>
-                </DataGridTextColumn>
+                  CellStyle="{DynamicResource DataGridCellStyle1}"
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
+                  RowStyle="{DynamicResource DataGridRowStyle1}"
+                  ItemsSource="{Binding AssetsSimple}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  SelectedItem="{Binding Path=SelectedAsset, Mode=TwoWay}"
+                  Grid.Row="5" x:Name="assetsDataGrid" CanUserReorderColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID" IsReadOnly="True" CanUserResize="False" Width="auto"/>
 
-                <DataGridTextColumn CanUserResize="False" Width="auto">
-                    <DataGridTextColumn.Header>
-                        <TextBlock x:Name="textBlockPrice" Text="Price"/>
-                    </DataGridTextColumn.Header>
-                </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" IsReadOnly="True" CanUserResize="False" Width="*"/>
 
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button x:Name="ShowDetails" Content="Details"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+                    <DataGridTextColumn Binding="{Binding Path=Price}" Header="Price" IsReadOnly="True" CanUserResize="False" Width="auto"/>
+                    
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="ShowDetails" Style="{StaticResource pagingButton}">
+                                    <Icon:PackIconMaterial Kind="DotsHorizontalCircle"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
             <!--Pagination section-->
         <Border Grid.Row="6" HorizontalAlignment="Right" BorderBrush="#dee4ec" BorderThickness="1"
                 CornerRadius="5" Padding="5" Background="White" Margin="0, 10, 10, 10">

@@ -1,4 +1,5 @@
 ﻿using CurrencyInspector.ViewModels;
+using System.Linq;
 using System.Windows.Controls;
 
 namespace CurrencyInspector.Views
@@ -12,6 +13,13 @@ namespace CurrencyInspector.Views
         {
             InitializeComponent();
             DataContext = new MainPageViewModel();
+            var vm = (MainPageViewModel)DataContext;
+            assetsDataGrid.ItemsSource = vm.AssetsSimple;
+        }
+
+        public void ShowDetails()
+        {
+
         }
     }
 }

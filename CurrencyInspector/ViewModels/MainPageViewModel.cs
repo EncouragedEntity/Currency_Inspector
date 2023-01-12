@@ -1,17 +1,17 @@
 ﻿using Caliburn.Micro;
 using CurrencyInspector.Models;
-using System.Collections.Generic;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace CurrencyInspector.ViewModels
 {
-    public class MainPageViewModel: Screen, INotifyPropertyChanged
+    public class MainPageViewModel: Conductor<Screen>, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ObservableCollection<AssetModel> _assets = null;
+        private ObservableCollection<AssetModel>? _assets = null;
         public ObservableCollection<AssetModel> Assets 
         {
             get
@@ -23,10 +23,28 @@ namespace CurrencyInspector.ViewModels
                 if (_assets != value)
                 {
                     _assets = value;
-                    if(this.PropertyChanged != null)
+                    if(PropertyChanged != null)
                         PropertyChanged(this,new PropertyChangedEventArgs("Assets"));
                 }
             } 
+        }
+
+        private ObservableCollection<AssetSimplifiedModel>? _assetsSimple = null;
+        public ObservableCollection<AssetSimplifiedModel> AssetsSimple
+        {
+            get
+            {
+                return _assetsSimple;
+            }
+            set
+            {
+                if (_assetsSimple != value)
+                {
+                    _assetsSimple = value;
+                    if (PropertyChanged != null)
+                        PropertyChanged(this, new PropertyChangedEventArgs("AssetsSimple"));
+                }
+            }
         }
 
         private int _amountOfAssets = 10;
@@ -43,16 +61,56 @@ namespace CurrencyInspector.ViewModels
             }
         }
 
+        private AssetSimplifiedModel _selectedAsset;
+        public AssetSimplifiedModel SelectedAsset
+        {
+            get
+            {
+                return _selectedAsset;
+            }
+            set
+            {
+                if (_selectedAsset != value)
+                {
+                    _selectedAsset = value;
+                    NotifyOfPropertyChange(()=>SelectedAsset);
+                }
+            }
+        }
+
         public MainPageViewModel()
         {
             Assets = new ObservableCollection<AssetModel>();
+            AssetsSimple = new ObservableCollection<AssetSimplifiedModel>();
             SetAssets();
+            SimplifyAllAssets();
+        }
+
+        private void SimplifyAllAssets()
+        {
+            foreach (var asset in Assets)
+            {
+                AssetsSimple.Add(asset.Simplify());
+            }
         }
 
         public void SetAssets()
         {
             APIRequestHandler API = new APIRequestHandler();
             Assets = new ObservableCollection<AssetModel>(API.GetAssets().assets);
+
+            foreach(var item in Assets)
+            {
+                if (String.IsNullOrEmpty(item.Name))
+                {
+                    item.Name = "Empty";
+                }
+            }
+        }
+
+        public void ShowDetails()
+        {
+            Task.Run(()=>ActivateItemAsync(new CurrencyDetailsPageViewModel(SelectedAsset, Assets)));
         }
     }
 }

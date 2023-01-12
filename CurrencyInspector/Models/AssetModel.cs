@@ -34,5 +34,7 @@ namespace CurrencyInspector.Models
 
         [JsonProperty(PropertyName = "updated_at")]
         public DateTime UpdatedAt { get; set; }
+
+        public AssetSimplifiedModel Simplify() => new AssetSimplifiedModel(AssetId, Name, Price);
     }
 }

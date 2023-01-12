@@ -62,7 +62,7 @@
                                 </StackPanel>
                             </Button>
 
-                            <Button x:Name="LoadCurrencyDetailsPage" Style="{StaticResource menuButton}">
+                            <Button x:Name="NAME" Style="{StaticResource menuButton}">
                                 <StackPanel  Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Account" Style="{StaticResource menuButtonIcon}"/>
                                     <TextBlock Text="Account" Margin="0, 0, 8, 0"/>
