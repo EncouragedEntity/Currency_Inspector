@@ -60,7 +60,7 @@ namespace CurrencyInspector.Models
         }
         #endregion
         #region Markets
-        public List<MarketModel> GetAllMarkets()
+        public Markets GetAllMarkets()
         {
             HttpWebRequest WebReq = (HttpWebRequest)WebRequest.Create($"https://cryptingup.com/api/markets");
             WebReq.Method = "GET";
@@ -73,9 +73,9 @@ namespace CurrencyInspector.Models
                 JsonString = reader.ReadToEnd();
             }
 
-            return JsonConvert.DeserializeObject<List<MarketModel>>(JsonString)!;
+            return JsonConvert.DeserializeObject<Markets>(JsonString)!;
         }
-        public List<MarketModel> GetMarkets(int Size = 10, int Start = 1)
+        public Markets GetMarkets(int Size = 10, int Start = 1)
         {
             HttpWebRequest WebReq = (HttpWebRequest)WebRequest.Create($"https://cryptingup.com/api/markets?start={Start}&size={Size}");
             WebReq.Method = "GET";
@@ -88,9 +88,9 @@ namespace CurrencyInspector.Models
                 JsonString = reader.ReadToEnd();
             }
 
-            return JsonConvert.DeserializeObject<List<MarketModel>>(JsonString)!;
+            return JsonConvert.DeserializeObject<Markets>(JsonString)!;
         }
-        public List<MarketModel> GetExchangeMarkets(string ID, int Size = 10, int Start = 1)
+        public Markets GetExchangeMarkets(string ID, int Size = 10, int Start = 1)
         {
             HttpWebRequest WebReq = (HttpWebRequest)WebRequest.Create($"https://cryptingup.com/api/exchanges/{ID}/markets?start={Start}&size={Size}");
             WebReq.Method = "GET";
@@ -103,9 +103,9 @@ namespace CurrencyInspector.Models
                 JsonString = reader.ReadToEnd();
             }
 
-            return JsonConvert.DeserializeObject<List<MarketModel>>(JsonString)!;
+            return JsonConvert.DeserializeObject<Markets>(JsonString)!;
         }
-        public List<MarketModel> GetAssetMarkets(string ID, int Size = 10, int Start = 1)
+        public Markets GetAssetMarkets(string ID, int Size = 10, int Start = 1)
         {
             HttpWebRequest WebReq = (HttpWebRequest)WebRequest.Create($"https://cryptingup.com/api/assets/{ID}/markets?start={Start}&size={Size}");
             WebReq.Method = "GET";
@@ -118,7 +118,7 @@ namespace CurrencyInspector.Models
                 JsonString = reader.ReadToEnd();
             }
 
-            return JsonConvert.DeserializeObject<List<MarketModel>>(JsonString)!;
+            return JsonConvert.DeserializeObject<Markets>(JsonString)!;
         }
         #endregion
         #region Exchanges

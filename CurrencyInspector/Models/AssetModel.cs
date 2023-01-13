@@ -1,5 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using Caliburn.Micro;
+using Newtonsoft.Json;
 using System;
+using System.Collections.ObjectModel;
 
 namespace CurrencyInspector.Models
 {
@@ -36,5 +38,7 @@ namespace CurrencyInspector.Models
         public DateTime UpdatedAt { get; set; }
 
         public AssetSimplifiedModel Simplify() => new AssetSimplifiedModel(AssetId, Name, Price);
+
+        public ObservableCollection<MarketModel> GetMarkets() => new APIRequestHandler().GetAssetMarkets(AssetId).markets;
     }
 }

@@ -6,7 +6,7 @@ namespace CurrencyInspector.Models
     public class MarketModel
     {
         [JsonProperty(PropertyName = "exchange_id")]
-        public string ExchangeId { get; set; }
+        public string ExchangeId { get; set; } = "Empty";
 
         [JsonProperty(PropertyName = "symbol")]
         public string Symbol { get; set; }

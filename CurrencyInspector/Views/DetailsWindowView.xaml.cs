@@ -1,19 +1,11 @@
-﻿using CurrencyInspector.Models;
-using CurrencyInspector.ViewModels;
+﻿using Caliburn.Micro;
+using CurrencyInspector.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace CurrencyInspector.Views
 {
@@ -22,26 +14,44 @@ namespace CurrencyInspector.Views
     /// </summary>
     public partial class DetailsWindowView : Window
     {
-        public DetailsWindowView(AssetModel asset)
-        {
-            Asset = asset;
-            InitializeComponent();
-            myGrid.DataContext = Asset;
-        }
-
         private AssetModel _asset;
         public AssetModel Asset
         {
-            get 
-            { 
+            get
+            {
                 return _asset;
             }
-            set 
-            { 
-                _asset = value; 
+            set
+            {
+                _asset = value;
             }
         }
 
+        private ObservableCollection<MarketModel> _markets;
+        public ObservableCollection<MarketModel> Markets
+        {
+            get => _markets;
+            set
+            {
+                _markets = value;
+            }
+        }
+
+        public DetailsWindowView(AssetModel asset)
+        {
+            Asset = asset;
+            SetMarkets();
+            InitializeComponent();
+            myGrid.DataContext = Asset;
+            PropertiesGrid.DataContext = this;
+        }
+
+        private void SetMarkets()
+        {
+            Markets = Asset.GetMarkets();
+            if (Markets is null || Markets.Count == 0)
+                MarketsControl.ItemsSource = new List<MarketModel> { new MarketModel() };
+        }
 
         private void GoBackClick(object sender, RoutedEventArgs e)
         {
