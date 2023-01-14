@@ -42,17 +42,23 @@ namespace CurrencyInspector.Views
             Asset = asset;
             SetMarkets();
             InitializeComponent();
-            myGrid.DataContext = Asset;
-            PropertiesGrid.DataContext = this;
+            myGrid.DataContext = this;
         }
 
         private void SetMarkets()
         {
             Markets = Asset.GetMarkets();
-            if (Markets is null || Markets.Count == 0)
-                MarketsControl.ItemsSource = new List<MarketModel> { new MarketModel() };
-        }
+            if (Markets.Count == 0)
+            {
+                if (Markets is null)
+                {
+                    Markets = new ObservableCollection<MarketModel>();
+                    return;
+                }
+                Markets.Add(new MarketModel());
+            }
 
+        }
         private void GoBackClick(object sender, RoutedEventArgs e)
         {
             Close();

@@ -50,60 +50,60 @@
                 <StackPanel Grid.Row="0" Grid.Column="0"
                             Orientation="Horizontal" Margin="5">
                     <TextBlock Foreground="#3B111A" FontSize="15" Text="Id:"/>
-                    <TextBox Text="{Binding AssetId}" Style="{StaticResource detailTextBox}"/>
+                    <TextBox Text="{Binding Asset.AssetId}" Style="{StaticResource detailTextBox}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="0"
                             Orientation="Horizontal" Margin="5">
                     <TextBlock Foreground="#3B111A" FontSize="15" Text="Name:"/>
-                    <TextBox Text="{Binding Name}" Style="{StaticResource detailTextBox}"/>
+                    <TextBox Text="{Binding Asset.Name}" Style="{StaticResource detailTextBox}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="0"
                             Orientation="Horizontal" Margin="5">
                     <TextBlock Foreground="#3B111A" FontSize="15" Text="Price:"/>
-                    <TextBox Text="{Binding Price}" Style="{StaticResource detailTextBox}"/>
+                    <TextBox Text="{Binding Asset.Price}" Style="{StaticResource detailTextBox}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="3" Grid.Column="0"
                             Orientation="Horizontal" Margin="5">
                     <TextBlock Foreground="#3B111A" FontSize="15" Text="Volume(24h):"/>
-                    <TextBox Text="{Binding Volume_24h}" Style="{StaticResource detailTextBox}"/>
+                    <TextBox Text="{Binding Asset.Volume_24h}" Style="{StaticResource detailTextBox}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="4" Grid.Column="0"
                             Orientation="Horizontal" Margin="5">
                     <TextBlock Foreground="#3B111A" FontSize="15" Text="Status:"/>
-                    <TextBox Text="{Binding Volume_24h}" Style="{StaticResource detailTextBox}"/>
+                    <TextBox Text="{Binding Asset.Volume_24h}" Style="{StaticResource detailTextBox}"/>
                 </StackPanel>
                 <!--#endregion-->
                 <!--#region Column 2 -->
                 <StackPanel Grid.Row="0" Grid.Column="1"
                             Orientation="Horizontal" Margin="5">
                     <TextBlock Foreground="#3B111A" FontSize="15" Text="Change(1h):"/>
-                    <TextBox Text="{Binding Change_1h}" Style="{StaticResource detailTextBox}"/>
+                    <TextBox Text="{Binding Asset.Change_1h}" Style="{StaticResource detailTextBox}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="1"
                             Orientation="Horizontal" Margin="5">
                     <TextBlock Foreground="#3B111A" FontSize="15" Text="Change(24h):"/>
-                    <TextBox Text="{Binding Change_24h}" Style="{StaticResource detailTextBox}"/>
+                    <TextBox Text="{Binding Asset.Change_24h}" Style="{StaticResource detailTextBox}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="1"
                             Orientation="Horizontal" Margin="5">
                     <TextBlock Foreground="#3B111A" FontSize="15" Text="Change(7d):"/>
-                    <TextBox Text="{Binding Change_7d}" Style="{StaticResource detailTextBox}"/>
+                    <TextBox Text="{Binding Asset.Change_7d}" Style="{StaticResource detailTextBox}"/>
                 </StackPanel>
                 <StackPanel Grid.Row="3" Grid.Column="1"
                             Orientation="Horizontal" Margin="5">
                     <TextBlock Foreground="#3B111A" FontSize="15" Text="Created at:"/>
-                    <TextBox Text="{Binding CreatedAt}" Style="{StaticResource detailTextBox}"/>
+                    <TextBox Text="{Binding Asset.CreatedAt}" Style="{StaticResource detailTextBox}"/>
                 </StackPanel>
                 <StackPanel Grid.Row="4" Grid.Column="1"
                             Orientation="Horizontal" Margin="5">
                     <TextBlock Foreground="#3B111A" FontSize="15" Text="Updated at:"/>
-                    <TextBox Text="{Binding UpdatedAt}" Style="{StaticResource detailTextBox}"/>
+                    <TextBox Text="{Binding Asset.UpdatedAt}" Style="{StaticResource detailTextBox}"/>
                 </StackPanel>
                 <!--#endregion-->
                 <!--#region Column 3-->
