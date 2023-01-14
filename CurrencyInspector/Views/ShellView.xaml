@@ -22,12 +22,6 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <!--
-                <Button  Margin="20, 28, 0, 35" Style="{StaticResource topButton}">
-                    <Icon:PackIconMaterial Kind="Menu" Width="15"
-                                                       Height="15"/>
-                </Button>
-                -->
                 <!--Menu icon-->
                 <Border Grid.Row="1" Background="DarkViolet" CornerRadius="0 50 0 30">
                     <DockPanel>

@@ -42,7 +42,7 @@ namespace CurrencyInspector.Views
             Asset = asset;
             SetMarkets();
             InitializeComponent();
-            myGrid.DataContext = this;
+            PropertiesGrid.DataContext = this;
         }
 
         private void SetMarkets()
