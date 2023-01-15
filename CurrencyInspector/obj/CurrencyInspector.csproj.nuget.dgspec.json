@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector\\CurrencyInspector.csproj": {}
+    "D:\\Currency_Inspector\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector.csproj": {}
   },
   "projects": {
-    "D:\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector\\CurrencyInspector.csproj": {
+    "D:\\Currency_Inspector\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector\\CurrencyInspector.csproj",
+        "projectUniqueName": "D:\\Currency_Inspector\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector.csproj",
         "projectName": "CurrencyInspector",
-        "projectPath": "D:\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector\\CurrencyInspector.csproj",
+        "projectPath": "D:\\Currency_Inspector\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector.csproj",
         "packagesPath": "C:\\Users\\пк\\.nuget\\packages\\",
-        "outputPath": "D:\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector\\obj\\",
+        "outputPath": "D:\\Currency_Inspector\\Currency_Inspector\\CurrencyInspector\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

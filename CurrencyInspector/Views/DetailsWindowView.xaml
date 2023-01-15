@@ -117,7 +117,8 @@
                              ItemsSource="{Binding Markets}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Button Content="{Binding Path=ExchangeId}"/>
+                                <Button Content="{Binding Path=ExchangeId}"
+                                        Style="{StaticResource gridDetailsButton}"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "68xSDsCdA/38Rtn+1AQeabnHKfDCeMDWc2+uDcFkapxm9F++0OMlxEDgGA9RE8GvCtDRx7Ib3tH7qbbIcEmnkg==",
+  "dgSpecHash": "6UGaYuec9mnepXGewHLZEC77r3LyEGvP6hwDvcLwIJJGl/LyhMKx6Exka6wfOWrldPbiBYA5n0Gl1Sb28PrkBg==",
   "success": true,
-  "projectFilePath": "D:\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector\\CurrencyInspector.csproj",
+  "projectFilePath": "D:\\Currency_Inspector\\Currency_Inspector\\CurrencyInspector\\CurrencyInspector.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\пк\\.nuget\\packages\\caliburn.micro\\4.0.212\\caliburn.micro.4.0.212.nupkg.sha512",
     "C:\\Users\\пк\\.nuget\\packages\\caliburn.micro.core\\4.0.212\\caliburn.micro.core.4.0.212.nupkg.sha512",

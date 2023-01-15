@@ -53,8 +53,10 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="ShowDetails" Click="ShowDetails_Click" Style="{StaticResource pagingButton}">
-                                    <Icon:PackIconMaterial Kind="DotsHorizontalCircle"/>
+                            <Button x:Name="ShowDetails" Click="ShowDetails_Click" 
+                                    Style="{StaticResource gridDetailsButton}">
+                                    <Icon:PackIconMaterial Kind="DotsHorizontalCircle"
+                                                           Style="{StaticResource gridButtonIcon}"/>
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

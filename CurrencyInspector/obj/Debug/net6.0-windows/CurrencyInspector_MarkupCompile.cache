@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Currency_Inspector\CurrencyInspector\CurrencyInspector\obj\Debug\net6.0-windows\
+D:\Currency_Inspector\Currency_Inspector\CurrencyInspector\obj\Debug\net6.0-windows\
 CurrencyInspector
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Currency_Inspector\CurrencyInspector\CurrencyInspector\App.xaml
-4364915905
+D:\Currency_Inspector\Currency_Inspector\CurrencyInspector\App.xaml
+6-2033122509
 
-171856363438
+21-650213532
 201-839547166
-Views\DetailsWindowView.xaml;Views\MainPageView.xaml;Views\SettingsPageView.xaml;Views\ShellView.xaml;
+MainWindow.xaml;Views\CurrencyDetailsPageView.xaml;Views\DetailsWindowView.xaml;Views\MainPageView.xaml;Views\SettingsPageView.xaml;Views\ShellView.xaml;
 
 False
 
